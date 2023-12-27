@@ -9,18 +9,19 @@ from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from user_service.views import UserViewGet, UserViewPost, UserViewPut, UserViewDelete, UserViewList
-from user_service.views import JobView
+from user_service.views import JobViewGet, JobViewPost, JobViewPut, JobViewDelete, JobViewList
 
 router = DefaultRouter()
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Snippets API",
-        default_version="v1",
+        title="Backend OpenApi Swagger",
+        default_version="v1.1",
         description="Test description",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@snippets.local"),
         license=openapi.License(name="BSD License"),
+        host="asdkklk"
     ),
     public=True,
     permission_classes=[permissions.AllowAny],
@@ -35,7 +36,12 @@ urlpatterns = [
     path("user/list", UserViewList.as_view(), name='user list'),
     path("user/edit/<str:uuid_ref>/", UserViewPut.as_view(), name='user edit'),
     path("user/delete/<str:uuid_ref>/", UserViewDelete.as_view(), name='user delete'),
-    path("job/", JobView.as_view()),
+
+    path("job/get/<str:uuid_ref>/", JobViewGet.as_view(), name='user get'),
+    path("job/add", JobViewPost.as_view(), name='user set'),
+    path("job/list", JobViewList.as_view(), name='user list'),
+    path("job/edit/<str:uuid_ref>/", JobViewPut.as_view(), name='user edit'),
+    path("job/delete/<str:uuid_ref>/", JobViewDelete.as_view(), name='user delete'),
     path(
         "api/v1/",
         include(
