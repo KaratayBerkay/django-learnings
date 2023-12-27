@@ -45,12 +45,12 @@ Run django server with cmd
 python3 manage.py runserver
 ```
 
-Create Migrations
+Migrations to create migrations for those changes
 ```shell
 python3 manage.py makemigrations
 ```
 
-Run migrations 
+Migrate Run python manage.py migrate to apply those changes to the database. 
 ```shell
 python3 manage.py migrate
 ```
