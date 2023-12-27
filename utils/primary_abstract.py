@@ -3,9 +3,7 @@ from django.db.models import Model, UUIDField
 
 
 class ModelPrimary(Model):
-
-    id = UUIDField(primary_key=True, default=uuid.uuid4)
+    uuid_ref = UUIDField(primary_key=True, default=uuid.uuid4, unique=True, editable=False, auto_created=True)
 
     class Meta:
         abstract = True
-

@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+
 # Django settings for mini_project project.
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -13,9 +14,16 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 
 # Application definition
 INSTALLED_APPS = [
-    "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions",
-    "django.db.backends.postgresql", "django.contrib.messages", "django.contrib.staticfiles", 'rest_framework',
-    "user_service", 'drf_yasg'
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.db.backends.postgresql",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "rest_framework",
+    "user_service",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
@@ -49,17 +57,19 @@ WSGI_APPLICATION = "mini_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "mini_project.dbengine",
-        'NAME': "postgres",
-        'USER': "postgres",
-        'PASSWORD': "postgres",
-        'HOST': "0.0.0.0",
-        'PORT': "5432",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "0.0.0.0",
+        "PORT": "5432",
     },
 }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+    },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
