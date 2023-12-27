@@ -4,3 +4,4 @@ django-admin
 django-rest-swagger
 gunicorn
 pygments
+psycopg2
