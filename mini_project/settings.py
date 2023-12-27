@@ -14,7 +14,8 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 
 INSTALLED_APPS = [
     "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions",
-    "django.db.backends.postgresql", "django.contrib.messages", "django.contrib.staticfiles", "mini_project"
+    "django.db.backends.postgresql", "django.contrib.messages", "django.contrib.staticfiles",
+    "user_service.apps.UserServiceConfig"
 ]
 
 MIDDLEWARE = [
@@ -48,10 +49,10 @@ WSGI_APPLICATION = "mini_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "mini_project.dbengine",
-        'NAME': "postgres_db",
-        'USER': "<db_username>",
-        'PASSWORD': "<password>",
-        'HOST': "<db_hostname_or_ip>",
+        'NAME': "postgres",
+        'USER': "postgres",
+        'PASSWORD': "postgres",
+        'HOST': "0.0.0.0",
         'PORT': "5432",
     },
 }
