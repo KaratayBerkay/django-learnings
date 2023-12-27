@@ -1,4 +1,4 @@
-from models import Question, Choice
+from user_service.models import Question, Choice
 from rest_framework.serializers import ModelSerializer
 
 
