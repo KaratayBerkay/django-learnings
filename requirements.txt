@@ -1,6 +1,7 @@
 django
 djangorestframework
 django-admin
+django-extensions
 django-rest-swagger
 gunicorn
 pygments

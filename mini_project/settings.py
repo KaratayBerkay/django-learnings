@@ -15,7 +15,7 @@ ALLOWED_HOSTS = ["127.0.0.1"]
 INSTALLED_APPS = [
     "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions",
     "django.db.backends.postgresql", "django.contrib.messages", "django.contrib.staticfiles", 'rest_framework',
-    "user_service.apps.UserServiceConfig", "django.contrib.staticfiles", "drf_yasg"
+    "user_service", 'drf_yasg'
 ]
 
 MIDDLEWARE = [
