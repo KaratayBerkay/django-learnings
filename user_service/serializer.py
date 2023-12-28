@@ -4,7 +4,6 @@ from rest_framework.fields import CharField, EmailField, IntegerField
 
 
 class UserSerializer(ModelSerializer):
-    uuid_ref = CharField()
     first_name = CharField(required=True)
     last_name = CharField(required=True)
     age = IntegerField(required=True)

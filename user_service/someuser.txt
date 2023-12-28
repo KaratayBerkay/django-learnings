@@ -1,0 +1,12 @@
+{
+  "first_name": "Berkay",
+  "last_name": "Karatay",
+  "age": 33,
+  "location": "Ankara, Turkey",
+  "email": "user@example.com",
+  "title": "Developer Title",
+  "description": "aljksdlşk lşaslşdkalşskdlşaksd lkalşskdlşaksld",
+  "status": 1,
+  "activate_date": "2023-12-28T09:18:26.698Z",
+  "deactivate_date": "2023-12-28T09:18:26.698Z"
+}

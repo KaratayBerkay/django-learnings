@@ -1,21 +1,15 @@
 from django.db.models import (
-    Model,
     CharField,
-    DO_NOTHING,
+    CASCADE,
     ForeignKey,
     IntegerField,
     EmailField,
     DateTimeField,
 )
-from django_extensions.db.models import (
-    TimeStampedModel,
-    ActivatorModel,
-    TitleDescriptionModel,
-)
-from utils.primary_abstract import ModelPrimary
+from utils.primary_abstract import BaseMixin
 
 
-class User(ModelPrimary, ActivatorModel, TimeStampedModel, TitleDescriptionModel, Model):
+class User(BaseMixin):
     first_name = CharField(max_length=200, help_text="User name", null=False)
     last_name = CharField(max_length=200, help_text="User lastname", null=False)
     age = IntegerField()
@@ -30,8 +24,8 @@ class User(ModelPrimary, ActivatorModel, TimeStampedModel, TitleDescriptionModel
         return str(self.uuid_ref)
 
 
-class Job(ModelPrimary, TimeStampedModel, Model):
-    user = ForeignKey(User, on_delete=DO_NOTHING, null=True)
+class Job(BaseMixin):
+    user = ForeignKey(User, on_delete=CASCADE, null=True)
     name = CharField(max_length=200, help_text="Job name", null=False)
     description = CharField(max_length=350, help_text="Job description", null=True)
     job_starts = DateTimeField(auto_now_add=True, null=False, blank=False)
@@ -41,4 +35,4 @@ class Job(ModelPrimary, TimeStampedModel, Model):
         verbose_name_plural = "Jobs"
 
     def __str__(self):
-        return self.uuid_ref
+        return str(self.uuid_ref)
