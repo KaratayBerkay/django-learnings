@@ -1,12 +1,16 @@
 from .serializer import UserSerializer, JobSerializer
 from user_service.models import User, Job
 
+from django.db.models import Q
+
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.request import Request
 
 from typing import Optional
+
+filter_expression = Q(firstname__startswith='asdasd')
 
 
 class StandardJsonResponse:
