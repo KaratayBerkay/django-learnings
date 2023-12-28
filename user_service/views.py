@@ -22,6 +22,7 @@ class StandardJsonResponse:
                 self.count = 1
             else:
                 self.count = self.data.count()
+            [item.pop('id') for item in self.data or []]    # Remove ids
             self.response: Response = Response(
                 data={"count": self.count, "data": self.data or []}, status=200
             )
@@ -55,7 +56,6 @@ class UserViewGet(UserViewBase):
 
     @staticmethod
     def get(request: Request, uuid_ref: str):
-        print(len(uuid_ref), uuid_ref)
         if not len(uuid_ref) == 36:
             return StandardJsonResponse(
                 message=f"Given uuid is not valid", status_code=status.HTTP_400_BAD_REQUEST
@@ -85,6 +85,10 @@ class UserViewPut(UserViewBase):
 
     @staticmethod
     def put(request: Request, uuid_ref: str):
+        if not len(uuid_ref) == 36:
+            return StandardJsonResponse(
+                message=f"Given uuid is not valid", status_code=status.HTTP_400_BAD_REQUEST
+            ).response
         return Response()
 
 
@@ -93,6 +97,10 @@ class UserViewDelete(GenericAPIView):
 
     @staticmethod
     def delete(request: Request, uuid_ref: str):
+        if not len(uuid_ref) == 36:
+            return StandardJsonResponse(
+                message=f"Given uuid is not valid", status_code=status.HTTP_400_BAD_REQUEST
+            ).response
         if query_set := User.objects.get_queryset().filter(uuid_ref=str(uuid_ref)):
             query_set.delete()
             return Response(status=200)

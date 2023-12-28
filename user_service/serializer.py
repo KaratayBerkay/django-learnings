@@ -1,6 +1,6 @@
 from user_service.models import User, Job
 from rest_framework.serializers import ModelSerializer
-from rest_framework.fields import CharField, EmailField, IntegerField
+from rest_framework.fields import CharField, EmailField, IntegerField, DateTimeField
 
 
 class UserSerializer(ModelSerializer):
@@ -18,8 +18,8 @@ class UserSerializer(ModelSerializer):
 class JobSerializer(ModelSerializer):
 
     name = CharField(min_length=20, max_length=200)
-    description = CharField(min_length=0, max_length=350)
+    job_starts = DateTimeField()
 
     class Meta:
         model = Job
-        fields = ["name", "description"]
+        fields = ["name", "job_starts"]

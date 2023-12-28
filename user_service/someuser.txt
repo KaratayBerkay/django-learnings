@@ -10,3 +10,15 @@
   "activate_date": "2023-12-28T09:18:26.698Z",
   "deactivate_date": "2023-12-28T09:18:26.698Z"
 }
+{
+  "first_name": "Koray",
+  "last_name": "Karatay",
+  "age": 27,
+  "location": "Ankara, Turkey",
+  "email": "user@example.com",
+  "title": "Dr Title",
+  "description": "aljksdlşk lşaslşdkalşskdlşaksd lkalşskdlşaksld",
+  "status": 1,
+  "activate_date": "2023-12-28T09:18:26.698Z",
+  "deactivate_date": "2023-12-28T09:18:26.698Z"
+}

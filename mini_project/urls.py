@@ -19,9 +19,8 @@ schema_view = get_schema_view(
         default_version="v1.1",
         description="Test description",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
+        contact=openapi.Contact(email="karatay.berkay@gmail.com"),
         license=openapi.License(name="BSD License"),
-        host="asdkklk"
     ),
     public=True,
     permission_classes=[permissions.AllowAny],

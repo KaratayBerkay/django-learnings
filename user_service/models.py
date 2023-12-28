@@ -27,7 +27,6 @@ class User(BaseMixin):
 class Job(BaseMixin):
     user = ForeignKey(User, on_delete=CASCADE, null=True)
     name = CharField(max_length=200, help_text="Job name", null=False)
-    description = CharField(max_length=350, help_text="Job description", null=True)
     job_starts = DateTimeField(auto_now_add=True, null=False, blank=False)
 
     class Meta:
