@@ -26,7 +26,8 @@ class StandardJsonResponse:
                 self.count = 1
             else:
                 self.count = self.data.count()
-            [item.pop('id') for item in self.data or []]    # Remove ids
+            print('self.data', self.data)
+            # [item.pop('id') for item in self.data or []]    # Remove ids
             self.response: Response = Response(
                 data={"count": self.count, "data": self.data or []}, status=200
             )
