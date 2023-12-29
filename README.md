@@ -60,6 +60,10 @@ Create a superuser for panel auth
 python3 manage.py createsuperuser
 ```
 
+```shell
+python manage.py shell
+```
+
 ## The main project directory
 
 The main project directory in Django encapsulates the essence of your application. It’s the nucleus from which all functionalities radiate, shaping the entirety of your web venture. Within this directory reside several pivotal files, each bearing its significance in orchestrating the symphony of your development journey:

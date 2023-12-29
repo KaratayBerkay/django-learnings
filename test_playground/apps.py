@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DbPlaygroundConfig(AppConfig):
+class TestPlaygroundConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "db_playground"
+    name = "test_playground"

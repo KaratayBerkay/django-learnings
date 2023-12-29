@@ -10,8 +10,6 @@ from rest_framework.request import Request
 
 from typing import Optional
 
-filter_expression = Q(firstname__startswith='asdasd')
-
 
 class StandardJsonResponse:
 
